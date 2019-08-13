@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title></title>
+
+	<!-- CSS links -->
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<link href="css/jasny-bootstrap.min.css" rel="stylesheet" />
+	<!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+	<!-- <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:600, 400"/> -->
+	<style type="text/css">
+
+		body {
+			    font-family: 'Open Sans', sans-serif;
+			    font-weight: 600;
+			    font-size: 13px;
+		}
+		.header {
+			background-color: #F6F6F7;
+			height: 24px;
+			margin: 10px 10px 0px 10px;
+			text-align: right;
+		}
+
+		.cart {
+			margin-right: 5px;
+			font-size : 12px;
+			color: #888888;
+			text-decoration:none;
+
+		}
+
+		.cart:hover {
+			text-decoration: none;
+			color: #888888;
+		}
+
+		.productTee {
+			margin-left: 80px;
+			height: 90%;
+			width: 65%;
+		}
+
+		.classicTee {
+			margin-bottom: 30px;
+			font-weight: normal;
+		}
+
+		.row {
+			margin-top: 50px;
+		}
+
+		.productDivider {
+			display: block;
+			border-style: inset;
+			border-width: 1px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			opacity: 0.1;
+		}
+
+		.productDescription {
+			margin-top: 20px;
+			color:#888888;
+			font-size: 12px;
+			font-weight: normal;
+		}
+
+
+		.addCart {
+			margin-top: 20px;
+		}
+
+		.btn {
+			border-radius: 0px;
+			background-color: #fff;
+		}
+
+		.default {
+			border-color: #CCCCCC;
+			color:#888888;
+		}
+
+		.addCartBtn {
+			border-color:#222222;
+			border-style:solid;
+			border-width: 2px;
+			font-weight: normal;
+			color:#222222;
+		}
+
+		.addCartBtn:focus {
+			outline: none !important;
+		}
+
+		.addCartBtn:hover {
+			background-color: #222222;
+			color: #fff;
+		}
+
+		.sizeLabel {
+			font-size: 10px;
+			color:#888888;
+			font-weight: normal;
+			margin-top: 10px;
+		}
+
+		.required {
+			font-size: 15px;
+			color: #C90000;
+		}
+
+		.sizesBtn:hover {
+			color: #888888;
+		}
+
+		.sizesBtn:focus {
+			border-color:#222222;
+			outline: none !important;
+		}
+
+		.sizesText {
+			color: #222222;
+			font-weight: bold;
+		}
+
+		.dropdown {
+		  position: relative;
+		  display: inline-block;
+		}
+
+		.dropdown-content {
+			border-color: #222222 ;
+			display: none;
+			position: absolute;
+			right: 0;
+			background-color: #f9f9f9;
+			min-width: 320px;
+			z-index: 1;
+			padding: 20px;
+		}
+
+		.dropdown-content a:hover {background-color: #f1f1f1;}
+
+		.dropdown:hover .dropdown-content {
+			border:1px solid #888888;
+			display: block;
+		}
+
+		.productTeeContent {
+			height: 115px;
+			width:75px;
+			float:left;
+			margin-right: 10px;
+		}
+
+		.contentText {
+			float: left;
+			text-align: left;
+			margin-left: 10px;
+		}
+
+		.totalItem {
+			padding-left: -100px;
+		}
+
+		.cartContentProduct {
+			height: 120px;
+			width: 230px;
+			margin-top: 10px;
+		}
+
+		.noData {
+			text-align: center;
+			color: #888888;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="header">
+
+		<div class="dropdown" style="float:right;">
+		  <a href="#" class="cart" id="myCart">My Cart</a>
+		  <div class="dropdown-content">
+		  	<input class="hidden" id="contentData"></input>
+		  	<div class="noData"><p> - Empty -</p></div>
+		  	<!-- <div class="cartContentProduct">
+			  	<img class="productTeeContent" src="images/classic-tee.jpg">
+			  	<div class="contentText">
+			  		<p>Classic Tee </p>
+			  		<label><span id="totalItem">1x</span> $ <span id="totaolPrice">75.00</span></label>
+			  		<p>Size: <span>S</span></p>
+			  	</div>
+		  	</div> -->
+		  </div>
+		</div>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<div id="product" class="col-sm-7 offset-sm-3 productDiv">
+				<img class="productTee" src="images/classic-tee.jpg">
+			</div>
+			<div id="textContent" class="col-sm-5">
+				<h3 class="classicTee">Classic Tee</h3>
+
+				<div class="productDivider"></div>
+
+				<p class="price">$75.00</p>
+
+				<div class="productDivider"></div>
+
+				<div class="productDescription">
+					<p>Dolor sit amet, consectetur adipiscing elit. Haec et tu ita posuisti, et verba vestra sunt. Quod autem ratione actum est, id officium appellamus dolor sit amet, consectetur adipiscing elit. Haec et tu ita posuisti, et verba vestra sunt. Quod autem ratione actum est, id officium appellamus</p>
+				</div>
+
+				<div class="sizes">
+					<label class="sizeLabel">SIZE <span class="required">*</span></span><span class='sizesText'></span> </label>
+				</div>
+
+				<div class="sizeButton">
+					<button class="btn default sizesBtn" id="sizeS">S</button>
+					<button class="btn default sizesBtn" id="sizeM">M</button>
+					<button class="btn default sizesBtn" id="sizeL">L</button>
+				</div>
+
+				<div class="addCart">
+					<button class="btn addCartBtn" id="addtoCart">ADD TO CART</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/jasny-bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#sizeS").on('click', function() {
+				$(".sizeLabel").html("SIZE <span class='required'>* </span><span class='sizesText'>S</span>")
+			});
+
+			$("#sizeM").on('click', function() {
+				$(".sizeLabel").html("SIZE <span class='required'>* </span><span class='sizesText'>M</span>")
+			});
+
+			$("#sizeL").on('click', function() {
+				$(".sizeLabel").html("SIZE <span class='required'>* </span><span class='sizesText'>L</span>")
+			});
+
+			function addItemProduct(size) {
+				var textContentContainer = $("<div/>").addClass("cartContentProduct").attr('size', size)
+				var classicTee = $("<p/>").text("Classic Tee");
+				var price = 75;
+				var image = $("<img src='images/classic-tee.jpg'/>").addClass("productTeeContent")
+				var cartItemDescription = $("<label/>").html("<span id='totalItem'>1</span>x $ <span id='totaolPrice'>75.00</span>")
+				var sizeDescription = $("<p/>").append("Size: <span class='sizeTee'>"+ size +"</span>")
+				var contentText = $("<div/>").addClass("contentText").append(classicTee, cartItemDescription, sizeDescription )
+
+				$(".dropdown-content").append(textContentContainer.append(image, contentText))
+
+
+				// $(".sizesText").html("");
+			}
+
+			$("#addtoCart").on('click', function() {
+				var size = $(".sizesText").text();
+
+				if (size != "") {
+
+					$(".noData").remove();
+					var divContainer = $(".dropdown-content").find("div.cartContentProduct")
+					// console.log(textContentContainer.attr("size") == "S")
+
+					
+
+					console.log($(".dropdown-content > [size='S']"))
+					if (divContainer.attr("size") ==  size) {
+						if ($("div.cartContentProduct").attr("size") == "S") {
+							console.log("pumapasok ba dito?")
+							var addItem = $(".dropdown-content > div.cartContentProduct[size='S'] > div.contentText > label > span#totalItem");
+							var itemLength = addItem.length
+							addItem.html(itemLength)
+						}
+
+						if ($(".dropdown-content > div.cartContentProduct[size='M']").length ==  1) {
+							var addItem = $(".dropdown-content > div.cartContentProduct[size='M'] > div.contentText > label > span#totalItem");
+							var itemLength = addItem.length
+							addItem.html(itemLength)
+						} 
+
+						if ($(".dropdown-content > div.cartContentProduct[size='L']").length ==  1) {
+							var addItem = $(".dropdown-content > div.cartContentProduct[size='M'] > div.contentText > label > span#totalItem");
+							var itemLength = addItem.length
+							addItem.html(itemLength);
+						}
+						
+					} else {
+						addItemProduct(size)
+					}
+					
+
+					
+
+					// console.log($(".dropdown-content > div.cartContentProduct[size='M']").length)
+
+					
+				} else {
+					alert("Please Select Size!")
+				}
+				
+			});
+
+			
+
+		});
+	</script>
+</body>
+</html>
